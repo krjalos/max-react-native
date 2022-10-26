@@ -1,7 +1,8 @@
 import {useState} from "react";
-import {StyleSheet} from "react-native";
 
-import {FlatList, ListRenderItemInfo, View} from 'react-native';
+import {FlatList, ListRenderItemInfo, View, StyleSheet} from 'react-native';
+import {StatusBar} from "expo-status-bar";
+
 import GoalInput from "./components/GoalInput";
 import GoalItem from "./components/GoalItem";
 
@@ -42,18 +43,21 @@ export default function App() {
 
 
   return (
-    <View style={styles.appContainer}>
-      <GoalInput onAddGoal={addGoal}/>
-      <View style={styles.todoListContainer}>
-        <FlatList data={goals} renderItem={(itemData: ListRenderItemInfo<GoalType>) => {
-          return (
-            <GoalItem goal={itemData.item} deleteGoal={deleteGoal}/>
-          );
-        }} keyExtractor={(item, index) => {
-          return item.id
-        }}/>
+    <>
+      <StatusBar style="light"/>
+      <View style={styles.appContainer}>
+        <GoalInput onAddGoal={addGoal}/>
+        <View style={styles.todoListContainer}>
+          <FlatList data={goals} renderItem={(itemData: ListRenderItemInfo<GoalType>) => {
+            return (
+              <GoalItem goal={itemData.item} deleteGoal={deleteGoal}/>
+            );
+          }} keyExtractor={(item, index) => {
+            return item.id
+          }}/>
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
@@ -64,7 +68,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16
   },
   todoListContainer: {
-    flex: 6
+    marginTop: 30
   },
 
 });
