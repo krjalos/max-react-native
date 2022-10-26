@@ -14,6 +14,7 @@ const GoalInput: React.FC<{onAddGoal: (inputText: string) => void}> = (props) =>
   const addGoalHandler = () => {
     if (inputText.trim().length > 0) {
       props.onAddGoal(inputText);
+      setInputText("");
     }
   }
 

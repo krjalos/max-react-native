@@ -36,13 +36,18 @@ export default function App() {
     });
   }
 
+  const deleteGoal = (id: string) => {
+    setGoals(prevState => prevState.filter(goal => goal.id !== id));
+  }
+
+
   return (
     <View style={styles.appContainer}>
       <GoalInput onAddGoal={addGoal}/>
       <View style={styles.todoListContainer}>
         <FlatList data={goals} renderItem={(itemData: ListRenderItemInfo<GoalType>) => {
           return (
-            <GoalItem goal={itemData.item}/>
+            <GoalItem goal={itemData.item} deleteGoal={deleteGoal}/>
           );
         }} keyExtractor={(item, index) => {
           return item.id
