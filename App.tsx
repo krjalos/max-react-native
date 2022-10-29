@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {StatusBar} from "expo-status-bar";
+import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import NewGame from "./screens/NewGame";
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Hello World!!!!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style="light"/>
+      <View style={styles.container}>
+        <ImageBackground blurRadius={20} style={styles.backgroundImage} source={require("./assets/images/background.jpeg")}>
+          <View style={styles.innerWrapper}>
+            <NewGame/>
+          </View>
+        </ImageBackground>
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   },
+  backgroundImage: {
+    flex:1
+  },
+  innerWrapper: {
+    flex:1,
+    paddingTop:60
+  }
 });
