@@ -19,9 +19,9 @@ const NewGame: React.FC = () => {
   }
 
   const startGame = () => {
-    const number = parseFloat(inputValue);
+    const number = parseInt(inputValue);
 
-    if(!Number.isInteger(number) || number < 1 || number > 99) {
+    if(!isNaN(number) || number < 1 || number > 99) {
       setShowPromt(true);
     }
   }
