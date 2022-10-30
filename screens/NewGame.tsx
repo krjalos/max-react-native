@@ -3,11 +3,8 @@ import {Alert, StyleSheet, Text, TextInput, View} from "react-native";
 import CustomButton from "../components/UI/CustomButton";
 import Heading from "../components/UI/Heading";
 import ButtonWrapper from "../components/UI/ButtonWrapper";
-// import Promt from "../components/helpers/Promt";
 
-const NewGame: React.FC = () => {
-
-  // const [showPromt, setShowPromt] = useState(false);
+const NewGame: React.FC<{startGame: (number: number) => void}> = (props) => {
   const [inputValue, setInputValue] = useState("");
 
   const resetInput = () => {
@@ -23,18 +20,14 @@ const NewGame: React.FC = () => {
 
     if(isNaN(number) || number < 1 || number > 99) {
       Alert.alert("Invalid number", "Number should be between 1 and 99", [{text: "Ok", style: "cancel", onPress: resetInput}]);
-      // setShowPromt(true);
       return;
     }
-  }
 
-  // const togglePromt = () => {
-  //   setShowPromt((prevState) => !prevState);
-  // }
+    props.startGame(number);
+  }
 
   return(
     <>
-      {/*<Promt visible={showPromt} content={{heading: "Invalid number", content: "Number should be between 1 and 99", button:"ok"}} onClose={togglePromt}/>*/}
       <View style={styles.container}>
         <Heading>Guess My Number</Heading>
         <View style={styles.inputContainer}>
