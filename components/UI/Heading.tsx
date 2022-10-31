@@ -1,15 +1,14 @@
 import React from "react";
-import {StyleSheet, Text, View, Dimensions} from "react-native";
+import {StyleSheet, Text, View, useWindowDimensions} from "react-native";
 
 const Heading: React.FC<{children: React.ReactNode}> = (props) => {
+  const {width: deviceWidth, height: deviceHeight} = useWindowDimensions();
   return (
     <View style={styles.heading}>
-      <Text style={styles.text}>{props.children}</Text>
+      <Text style={[styles.text, {fontSize: deviceHeight > 420 ? 30 : 24}]}>{props.children}</Text>
     </View>
   );
 }
-
-const deviceWidth = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
   heading: {
@@ -22,7 +21,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   text: {
-    fontSize: deviceWidth < 420 ? 24: 30,
+    fontSize: 24,
     fontWeight: "700",
     color:"#fff"
   }

@@ -1,11 +1,13 @@
 import React, {useState} from "react";
-import {Alert, StyleSheet, Text, TextInput, View} from "react-native";
+import {Alert, StyleSheet, Text, TextInput, useWindowDimensions, View} from "react-native";
 import CustomButton from "../components/UI/CustomButton";
 import Heading from "../components/UI/Heading";
 import ButtonWrapper from "../components/UI/ButtonWrapper";
 
 const NewGame: React.FC<{startGame: (number: number) => void}> = (props) => {
   const [inputValue, setInputValue] = useState("");
+
+  const {width: deviceWidth, height: deviceHeight} = useWindowDimensions();
 
   const resetInput = () => {
     setInputValue("");
@@ -30,9 +32,9 @@ const NewGame: React.FC<{startGame: (number: number) => void}> = (props) => {
     <>
       <View style={styles.container}>
         <Heading>Guess My Number</Heading>
-        <View style={styles.inputContainer}>
+        <View style={[styles.inputContainer,{padding: deviceHeight < 420 ? 15 : 30}]}>
           <Text style={styles.inputContainerText}>Enter a number</Text>
-          <TextInput style={styles.inputContainerInput} maxLength={2} value={inputValue} onChangeText={inputChangeHandler} keyboardType="number-pad"/>
+          <TextInput style={[styles.inputContainerInput, {fontSize: deviceHeight < 420 ? 30 : 40}]} maxLength={2} value={inputValue} onChangeText={inputChangeHandler} keyboardType="number-pad"/>
           <ButtonWrapper>
             <CustomButton onPress={resetInput}>
               Reset
@@ -52,8 +54,7 @@ export default NewGame;
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    alignItems:"center",
-    paddingTop: 100
+    alignItems:"center"
   },
   inputContainer: {
     width:"100%",
