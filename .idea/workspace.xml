@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a9ffc79-0c5d-4f86-a581-8583c1c1f402" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/UI/Guess.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/UI/Heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/Heading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/helpers/Promt.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Game.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Game.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/GameOver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/GameOver.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/NewGame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NewGame.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +21,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Gb1PsbHgcKwMzR955VWNf6Hmau" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -58,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666642449039</updated>
       <workItem from="1666642450142" duration="7366000" />
+      <workItem from="1667219696875" duration="2381000" />
     </task>
     <servers />
   </component>

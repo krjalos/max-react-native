@@ -1,5 +1,5 @@
 import React from "react";
-import {ImageBackground, StyleSheet, Text, View} from "react-native";
+import {ImageBackground, StyleSheet, Text, View, Dimensions} from "react-native";
 import Heading from "../components/UI/Heading";
 import ButtonWrapper from "../components/UI/ButtonWrapper";
 import CustomButton from "../components/UI/CustomButton";
@@ -26,6 +26,7 @@ const GameOver: React.FC<{ numberToGuess: number; attempts: number; resetGame: (
 
 export default GameOver;
 
+const deviceWidth = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
   container: {
@@ -34,9 +35,9 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   imageBlock: {
-    width: 300,
-    height: 300,
-    borderRadius: 150,
+    width: deviceWidth / 2,
+    height: deviceWidth /2,
+    borderRadius: deviceWidth / 2 / 2,
     overflow: "hidden",
     borderWidth: 2,
     borderColor: "#000",

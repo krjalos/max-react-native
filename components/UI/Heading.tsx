@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, Text, View, Dimensions} from "react-native";
 
 const Heading: React.FC<{children: React.ReactNode}> = (props) => {
   return (
@@ -9,16 +9,20 @@ const Heading: React.FC<{children: React.ReactNode}> = (props) => {
   );
 }
 
+const deviceWidth = Dimensions.get("screen").width;
+
 const styles = StyleSheet.create({
   heading: {
     borderWidth: 3,
     borderColor: "#fff",
     padding:10,
     marginVertical: 20,
-    maxWidth: "95%"
+    width:400,
+    maxWidth: "70%",
+    alignItems: "center"
   },
   text: {
-    fontSize: 30,
+    fontSize: deviceWidth < 420 ? 24: 30,
     fontWeight: "700",
     color:"#fff"
   }
