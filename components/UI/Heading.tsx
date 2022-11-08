@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet, Text, View, useWindowDimensions} from "react-native";
+import {StyleSheet, Text, View, useWindowDimensions, Platform} from "react-native";
 
 const Heading: React.FC<{children: React.ReactNode, style?: {text?: {}, heading?: {}}}> = (props) => {
   const {height: deviceHeight} = useWindowDimensions();
@@ -12,7 +12,8 @@ const Heading: React.FC<{children: React.ReactNode, style?: {text?: {}, heading?
 
 const styles = StyleSheet.create({
   heading: {
-    borderWidth: 3,
+    // borderWidth: Platform.OS === "android" ? 3 : 2,
+    borderWidth: Platform.select({ios: 0, android: 3}),
     borderColor: "#fff",
     padding:10,
     marginVertical: 20,
