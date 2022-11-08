@@ -1,15 +1,28 @@
 import React from "react";
-import {ImageBackground, StyleSheet, Text, View, Dimensions} from "react-native";
+import {ImageBackground, StyleSheet, Text, View, useWindowDimensions} from "react-native";
 import Heading from "../components/UI/Heading";
 import ButtonWrapper from "../components/UI/ButtonWrapper";
 import CustomButton from "../components/UI/CustomButton";
 
 const GameOver: React.FC<{ numberToGuess: number; attempts: number; resetGame: () => void }> = (props) => {
 
+  const {height: deviceHeight, width: deviceWidth} = useWindowDimensions();
+
+  const orientation = deviceHeight > deviceWidth ? "portrait" : "landscape";
+
+  const imageSize = orientation === "portrait" ? deviceWidth / 2 : deviceHeight / 4;
+
+  const imageStyle = {
+    width: imageSize,
+    height: imageSize,
+    borderRadius: imageSize / 2,
+    marginVertical: orientation === "portrait" ? 20 : 5
+  }
+
   return (
     <View style={styles.container}>
       <Heading>Game Over!</Heading>
-      <ImageBackground style={styles.imageBlock} source={require('../assets/images/background.jpeg')}
+      <ImageBackground style={[styles.imageBlock, imageStyle]} source={require('../assets/images/background.jpeg')}
                        resizeMode="cover"/>
       <View style={styles.textWrapper}>
         <Text style={styles.text}>
@@ -26,8 +39,6 @@ const GameOver: React.FC<{ numberToGuess: number; attempts: number; resetGame: (
 
 export default GameOver;
 
-const deviceWidth = Dimensions.get("screen").width;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -35,13 +46,9 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   },
   imageBlock: {
-    width: deviceWidth / 2,
-    height: deviceWidth /2,
-    borderRadius: deviceWidth / 2 / 2,
     overflow: "hidden",
     borderWidth: 2,
-    borderColor: "#000",
-    marginVertical: 20
+    borderColor: "#000"
   },
   textWrapper: {
     width: "60%",

@@ -39,28 +39,23 @@ export default function App() {
   return (
     <>
       <StatusBar style="light"/>
-      <ScrollView style={styles.fullHeight}>
-        <KeyboardAvoidingView style={styles.fullHeight} behavior="position">
-          <View style={styles.fullHeight}>
-            <ImageBackground
-              blurRadius={20}
-              style={styles.fullHeight}
-              source={require("./assets/images/background.jpeg")}
-              resizeMode="cover"
-              imageStyle={styles.backgroundImageStyle}
-            >
-              <SafeAreaView style={styles.fullHeight}>
-                <View style={[styles.innerWrapper, {paddingTop: deviceHeight < 450 ? 20 : 60}]}>
-                  {gameState === 'newGame' && <NewGame startGame={startNewGame}/>}
-                  {gameState === 'game' && <Game numberToGuess={numberToGuess} endGame={endGame}/>}
-                  {gameState === 'gameOver' && <GameOver numberToGuess={numberToGuess} attempts={lastAttempts} resetGame={resetGame}/>}
-                </View>
-              </SafeAreaView>
-            </ImageBackground>
-          </View>
-
-        </KeyboardAvoidingView>
-      </ScrollView>
+      <View style={styles.fullHeight}>
+        <ImageBackground
+          blurRadius={20}
+          style={styles.fullHeight}
+          source={require("./assets/images/background.jpeg")}
+          resizeMode="cover"
+          imageStyle={styles.backgroundImageStyle}
+        >
+          <SafeAreaView style={styles.fullHeight}>
+            <View style={[styles.innerWrapper, {paddingTop: deviceHeight < 450 ? 20 : 60}]}>
+              {gameState === 'newGame' && <NewGame startGame={startNewGame}/>}
+              {gameState === 'game' && <Game numberToGuess={numberToGuess} endGame={endGame}/>}
+              {gameState === 'gameOver' && <GameOver numberToGuess={numberToGuess} attempts={lastAttempts} resetGame={resetGame}/>}
+            </View>
+          </SafeAreaView>
+        </ImageBackground>
+      </View>
     </>
   );
 }

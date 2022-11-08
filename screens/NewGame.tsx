@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Alert, StyleSheet, Text, TextInput, useWindowDimensions, View} from "react-native";
+import {Alert, StyleSheet, Text, TextInput, useWindowDimensions, View, ScrollView, KeyboardAvoidingView} from "react-native";
 import CustomButton from "../components/UI/CustomButton";
 import Heading from "../components/UI/Heading";
 import ButtonWrapper from "../components/UI/ButtonWrapper";
@@ -29,29 +29,34 @@ const NewGame: React.FC<{startGame: (number: number) => void}> = (props) => {
   }
 
   return(
-    <>
-      <View style={styles.container}>
-        <Heading>Guess My Number</Heading>
-        <View style={[styles.inputContainer,{padding: deviceHeight < 420 ? 15 : 30}]}>
-          <Text style={styles.inputContainerText}>Enter a number</Text>
-          <TextInput style={[styles.inputContainerInput, {fontSize: deviceHeight < 420 ? 30 : 40}]} maxLength={2} value={inputValue} onChangeText={inputChangeHandler} keyboardType="number-pad"/>
-          <ButtonWrapper>
-            <CustomButton onPress={resetInput}>
-              Reset
-            </CustomButton>
-            <CustomButton onPress={startGame}>
-              Confirm
-            </CustomButton>
-          </ButtonWrapper>
+    <ScrollView style={styles.fullHeight}>
+      <KeyboardAvoidingView style={styles.fullHeight} behavior="position">
+        <View style={styles.container}>
+          <Heading>Guess My Number</Heading>
+          <View style={[styles.inputContainer,{padding: deviceHeight < 420 ? 15 : 30}]}>
+            <Text style={styles.inputContainerText}>Enter a number</Text>
+            <TextInput style={[styles.inputContainerInput, {fontSize: deviceHeight < 420 ? 30 : 40}]} maxLength={2} value={inputValue} onChangeText={inputChangeHandler} keyboardType="number-pad"/>
+            <ButtonWrapper>
+              <CustomButton onPress={resetInput}>
+                Reset
+              </CustomButton>
+              <CustomButton onPress={startGame}>
+                Confirm
+              </CustomButton>
+            </ButtonWrapper>
+          </View>
         </View>
-      </View>
-    </>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 }
 
 export default NewGame;
 
 const styles = StyleSheet.create({
+  fullHeight: {
+    flex:1
+  },
   container: {
     flex:1,
     alignItems:"center"
