@@ -12,8 +12,7 @@ const Heading: React.FC<{children: React.ReactNode, style?: {text?: {}, heading?
 
 const styles = StyleSheet.create({
   heading: {
-    // borderWidth: Platform.OS === "android" ? 3 : 2,
-    borderWidth: Platform.select({ios: 0, android: 3}),
+    borderWidth:3,
     borderColor: "#fff",
     padding:10,
     marginVertical: 20,
