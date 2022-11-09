@@ -1,8 +1,13 @@
 import React from "react";
 import Category from "../../models/category";
 import {StyleSheet, Text, View, useWindowDimensions, Pressable} from "react-native";
+import {useNavigation} from "@react-navigation/native";
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from "../../screens/RootStackParamList";
 
-const CategoryItem:React.FC<{category: Category, navigateToCategory: () => void}> = (props) => {
+type Props = NativeStackScreenProps<RootStackParamList, 'Category'>;
+
+const CategoryItem:React.FC<{category: Category}> = (props) => {
   const {width, height} = useWindowDimensions();
 
   const portrait = height > width;
@@ -17,9 +22,15 @@ const CategoryItem:React.FC<{category: Category, navigateToCategory: () => void}
     marginVertical: margin,
   };
 
+  const navigation = useNavigation<Props['navigation']>();
+
+  function navigateToCategory() {
+    navigation.navigate('Category');
+  }
+
   return (
     <View style={[styles.category, categoryStyle]}>
-      <Pressable onPress={props.navigateToCategory} style={({pressed})=> {
+      <Pressable onPress={navigateToCategory} style={({pressed})=> {
         return [styles.button, pressed ? styles.buttonPressed: null ];
       }}>
         <Text style={styles.title}>{props.category.title}</Text>

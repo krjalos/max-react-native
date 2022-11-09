@@ -3,11 +3,11 @@ import Category from "../../models/category";
 import CategoryItem from "./CategoryItem";
 import {FlatList, StyleSheet, View} from "react-native";
 
-const Categories: React.FC<{ categories: Category[], navigateToCategory: () => void }> = (props) => {
+const Categories: React.FC<{ categories: Category[]}> = (props) => {
   return (
     <View style={styles.landingContainer}>
       <FlatList columnWrapperStyle={styles.listColumn} data={props.categories} renderItem={({item}) => {
-        return <CategoryItem category={item} navigateToCategory={props.navigateToCategory}/>
+        return <CategoryItem category={item}/>
       }} keyExtractor={(item) => {
         return item.id
       }} numColumns={2} />

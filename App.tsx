@@ -1,10 +1,11 @@
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {RootStackParamList} from "./screens/RootStackParamList";
 
 import Landing from "./screens/Landing";
 import Category from "./screens/Category";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   
