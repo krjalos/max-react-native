@@ -25,7 +25,7 @@ const CategoryItem:React.FC<{category: Category}> = (props) => {
   const navigation = useNavigation<Props['navigation']>();
 
   function navigateToCategory() {
-    navigation.navigate('Category');
+    navigation.navigate('Category', {id: props.category.id});
   }
 
   return (
