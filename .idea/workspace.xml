@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a9ffc79-0c5d-4f86-a581-8583c1c1f402" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/screens/Category.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/categories/Categories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/categories/Categories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/categories/CategoryItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/categories/CategoryItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Landing.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +65,7 @@
       <workItem from="1667219696875" duration="24185000" />
       <workItem from="1667479828006" duration="19118000" />
       <workItem from="1667936581878" duration="2071000" />
-      <workItem from="1667941596210" duration="12310000" />
+      <workItem from="1667941596210" duration="13686000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,19 @@
 import React from "react";
-import {FlatList, StyleSheet, Text, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
 import Categories from "../components/categories/Categories";
 
-const Landing: React.FC = () => {
+const Landing: React.FC<{navigation: any}> = (props) => {
+
+  const navigateToCategory = () => {
+    props.navigation.navigate('Category');
+  }
+
+
   return (
     <View style={styles.page}>
-      <Categories categories={CATEGORIES}/>
+      <Categories categories={CATEGORIES} navigateToCategory={navigateToCategory}/>
     </View>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Category from "../../models/category";
 import {StyleSheet, Text, View, useWindowDimensions, Pressable} from "react-native";
 
-const CategoryItem:React.FC<{category: Category}> = (props) => {
+const CategoryItem:React.FC<{category: Category, navigateToCategory: () => void}> = (props) => {
   const {width, height} = useWindowDimensions();
 
   const portrait = height > width;
@@ -17,13 +17,9 @@ const CategoryItem:React.FC<{category: Category}> = (props) => {
     marginVertical: margin,
   };
 
-  function categoryPressHandler() {
-
-  }
-
   return (
     <View style={[styles.category, categoryStyle]}>
-      <Pressable onPress={categoryPressHandler} style={({pressed})=> {
+      <Pressable onPress={props.navigateToCategory} style={({pressed})=> {
         return [styles.button, pressed ? styles.buttonPressed: null ];
       }}>
         <Text style={styles.title}>{props.category.title}</Text>
