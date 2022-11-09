@@ -2,9 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a9ffc79-0c5d-4f86-a581-8583c1c1f402" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/UI/Heading.ios.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/categories/Categories.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/categories/CategoryItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/dummy-data.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/category.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/meal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screens/Landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/UI/Heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UI/Heading.android.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/background.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/ButtonWrapper.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/CustomButton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/Guess.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/Heading.android.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UI/Heading.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Game.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/GameOver.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/NewGame.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,22 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/alex/sites/tutorials/max-react-native/components/UI",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/alex/sites/tutorials/max-react-native/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alex/sites/tutorials/max-react-native&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/alex/sites/tutorials/max-react-native/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/components/UI" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/categories" />
       <recent name="$PROJECT_DIR$/assets/images" />
     </key>
   </component>
@@ -57,7 +79,9 @@
       <updated>1666642449039</updated>
       <workItem from="1666642450142" duration="7366000" />
       <workItem from="1667219696875" duration="24185000" />
-      <workItem from="1667479828006" duration="14063000" />
+      <workItem from="1667479828006" duration="19118000" />
+      <workItem from="1667936581878" duration="2071000" />
+      <workItem from="1667941596210" duration="10201000" />
     </task>
     <servers />
   </component>
