@@ -1,22 +1,21 @@
-import {SafeAreaView, StyleSheet, View} from "react-native";
-import Header from "./components/Header";
+import { StatusBar} from "react-native";
+import {NavigationContainer} from "@react-navigation/native";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+
 import Landing from "./screens/Landing";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   
   return (
     <>
-      <View style={styles.container}>
-        {/* <Header>All Categories</Header> */}
-        <Landing/>
-      </View>
+      <StatusBar barStyle="dark-content"/>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="landing" component={Landing}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#432616",
-  }
-});

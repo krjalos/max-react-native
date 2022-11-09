@@ -16,8 +16,6 @@ export default Landing;
 
 const styles = StyleSheet.create({
   page: {
-    flex:1,
-    backgroundColor:"#795c34",
-    paddingTop: 60
+    flex:1
   }
 });

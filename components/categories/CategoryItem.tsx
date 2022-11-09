@@ -24,7 +24,7 @@ const CategoryItem:React.FC<{category: Category}> = (props) => {
   return (
     <View style={[styles.category, categoryStyle]}>
       <Pressable onPress={categoryPressHandler} style={({pressed})=> {
-        return [styles.button, pressed ? styles.buttonPressed: null];
+        return [styles.button, pressed ? styles.buttonPressed: null ];
       }}>
         <Text style={styles.title}>{props.category.title}</Text>
       </Pressable>
