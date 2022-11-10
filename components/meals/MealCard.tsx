@@ -1,17 +1,21 @@
-import {ImageBackground, StyleSheet, Text, View} from "react-native";
+import {ImageBackground, Pressable, StyleSheet, Text, View} from "react-native";
 import Meal from "../../models/meal";
 import React from "react";
 
 const MealCard: React.FC<{ meal: Meal }> = ({meal}) => {
   return (
     <View style={styles.cardWrapper}>
-      <ImageBackground source={{uri: meal.imageUrl}} style={styles.image} resizeMode="cover"/>
-      <Text style={styles.title}>{meal.title}</Text>
-      <View style={styles.info}>
-        <Text style={styles.infoItem}>{meal.duration}m</Text>
-        <Text style={styles.infoItem}>{meal.complexity.toUpperCase()}</Text>
-        <Text style={styles.infoItem}>{meal.affordability.toUpperCase()}</Text>
-      </View>
+      <Pressable style={({pressed}) => {
+        return pressed ? styles.pressed : null;
+      }}>
+        <ImageBackground source={{uri: meal.imageUrl}} style={styles.image} resizeMode="cover"/>
+        <Text style={styles.title}>{meal.title}</Text>
+        <View style={styles.info}>
+          <Text style={styles.infoItem}>{meal.duration}m</Text>
+          <Text style={styles.infoItem}>{meal.complexity.toUpperCase()}</Text>
+          <Text style={styles.infoItem}>{meal.affordability.toUpperCase()}</Text>
+        </View>
+      </Pressable>
     </View>
   );
 }
@@ -28,6 +32,9 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 200
+  },
+  pressed: {
+    opacity:0.7
   },
   title: {
     textAlign:"center",
