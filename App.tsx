@@ -1,5 +1,5 @@
-import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {NavigationContainer, RouteProp} from "@react-navigation/native";
+import {createNativeStackNavigator, NativeStackScreenProps} from "@react-navigation/native-stack";
 import {RootStackParamList} from "./screens/RootStackParamList";
 
 import Landing from "./screens/Landing";
@@ -8,7 +8,7 @@ import Category from "./screens/Category";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
-  
+
   return (
     <>
       <NavigationContainer>
@@ -24,8 +24,10 @@ export default function App() {
           <Stack.Screen name="Landing" component={Landing} options={{
             title: "All Categories"
           }}/>
-          <Stack.Screen name="Category" component={Category} options={{
-            title: "Meals"
+          <Stack.Screen name="Category" component={Category} options={({route}) => {
+            return {
+              title: route.params.id.toString()
+            }
           }}/>
         </Stack.Navigator>
       </NavigationContainer>
