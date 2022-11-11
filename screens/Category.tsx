@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useLayoutEffect} from "react";
 import {FlatList, StyleSheet, Text, View} from "react-native";
-import {MEALS} from "../data/dummy-data";
+import {MEALS, CATEGORIES} from "../data/dummy-data";
 
 import {RootStackParamList} from "./RootStackParamList";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
@@ -9,9 +9,17 @@ import MealCard from "../components/meals/MealCard";
 type Props = NativeStackScreenProps<RootStackParamList, 'Category'>;
 
 
-const Category:React.FC<{route: Props["route"]}> = (props) => {
+const Category:React.FC<{route: Props["route"], navigation: Props['navigation']}> = (props) => {
 
   const catId = props.route.params.id;
+
+  useLayoutEffect(() => {
+    const categoryName = CATEGORIES.find(cat => cat.id === catId)!.title;
+
+    props.navigation.setOptions({
+      title:categoryName
+    });
+  }, [CATEGORIES, catId, props.navigation])
 
   const mealsToDisplay = MEALS.filter(meal => meal.categoryIds.indexOf(catId) > -1);
 

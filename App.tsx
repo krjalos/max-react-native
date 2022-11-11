@@ -24,11 +24,7 @@ export default function App() {
           <Stack.Screen name="Landing" component={Landing} options={{
             title: "All Categories"
           }}/>
-          <Stack.Screen name="Category" component={Category} options={({route}) => {
-            return {
-              title: route.params.id.toString()
-            }
-          }}/>
+          <Stack.Screen name="Category" component={Category}/>
         </Stack.Navigator>
       </NavigationContainer>
     </>
