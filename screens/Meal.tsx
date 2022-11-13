@@ -4,6 +4,7 @@ import {MEALS} from "../data/dummy-data";
 
 import {RootStackParamList} from "./RootStackParamList";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
+import IconButton from "../components/UI/IconButton";
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Meal'>;
 
@@ -14,11 +15,18 @@ const Meal:React.FC<{route: Props["route"], navigation: Props['navigation']}> = 
 
   const meal = MEALS.find(meal => meal.id === mealId)!;
 
+  function favoriteToggle(){
+    console.log("pressed");
+  }
+
   useLayoutEffect(() => {
     const mealName = MEALS.find(meal => meal.id === mealId)!.title;
 
     props.navigation.setOptions({
-      title:mealName
+      title:mealName,
+      headerRight: () => {
+        return <IconButton source={require("../assets/images/star-icon.png")} pressed={favoriteToggle}/>
+      }
     });
   }, [MEALS, mealId, props.navigation]);
 

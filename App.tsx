@@ -1,5 +1,5 @@
-import {NavigationContainer, RouteProp} from "@react-navigation/native";
-import {createNativeStackNavigator, NativeStackScreenProps} from "@react-navigation/native-stack";
+import {NavigationContainer} from "@react-navigation/native";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {RootStackParamList} from "./screens/RootStackParamList";
 
 import Landing from "./screens/Landing";
