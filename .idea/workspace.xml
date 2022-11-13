@@ -4,9 +4,9 @@
     <list default="true" id="1a9ffc79-0c5d-4f86-a581-8583c1c1f402" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/UserScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/UserScreen.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,7 @@
       <workItem from="1667219696875" duration="24185000" />
       <workItem from="1667479828006" duration="19118000" />
       <workItem from="1667936581878" duration="2071000" />
-      <workItem from="1667941596210" duration="51361000" />
+      <workItem from="1667941596210" duration="52458000" />
     </task>
     <servers />
   </component>
