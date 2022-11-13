@@ -1,4 +1,5 @@
 export type RootStackParamList = {
   Landing: undefined;
-  Category: {id: number};
+  Category: {id: string};
+  Meal: {id: string};
 };

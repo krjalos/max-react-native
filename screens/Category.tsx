@@ -4,6 +4,8 @@ import {MEALS, CATEGORIES} from "../data/dummy-data";
 
 import {RootStackParamList} from "./RootStackParamList";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
+
+
 import MealCard from "../components/meals/MealCard";
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Category'>;

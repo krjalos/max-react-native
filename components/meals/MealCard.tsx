@@ -2,10 +2,23 @@ import {ImageBackground, Pressable, StyleSheet, Text, View} from "react-native";
 import Meal from "../../models/meal";
 import React from "react";
 
+import {useNavigation} from "@react-navigation/native";
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from "../../screens/RootStackParamList";
+
+type Props = NativeStackScreenProps<RootStackParamList, 'Category'>;
+
 const MealCard: React.FC<{ meal: Meal }> = ({meal}) => {
+
+  const navigation = useNavigation<Props['navigation']>();
+
+  function navigateToCategory() {
+    navigation.navigate('Meal', {id: meal.id});
+  }
+
   return (
     <View style={styles.cardWrapper}>
-      <Pressable style={({pressed}) => {
+      <Pressable onPress={navigateToCategory} style={({pressed}) => {
         return pressed ? styles.pressed : null;
       }}>
         <ImageBackground source={{uri: meal.imageUrl}} style={styles.image} resizeMode="cover"/>

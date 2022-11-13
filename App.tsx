@@ -4,6 +4,7 @@ import {RootStackParamList} from "./screens/RootStackParamList";
 
 import Landing from "./screens/Landing";
 import Category from "./screens/Category";
+import Meal from "./screens/Meal";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -25,6 +26,7 @@ export default function App() {
             title: "All Categories"
           }}/>
           <Stack.Screen name="Category" component={Category}/>
+          <Stack.Screen name="Meal" component={Meal}/>
         </Stack.Navigator>
       </NavigationContainer>
     </>
